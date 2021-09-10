@@ -1,0 +1,45 @@
+//Reach the trget. Problem 1.Recusion
+#include <iostream>
+using namespace std;
+int count=0;
+void fun(int a, int b,int c,int d);
+int main()
+{
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    fun(a,b,c,d);
+    if(count>0)
+    {   //cout<<count<<" ";
+        cout<<"yes";
+    }
+    else
+        cout<<"no";
+    return 0;
+}
+
+void fun(int a, int b,int c,int d)
+{
+   if(a==c && d==0)
+       count++;
+       
+    if(a<=c && d>=0)
+    {
+        if(a+b*d>=c)
+        {  
+            fun(a-b,b,c,d-1);
+            fun(a+b,b,c,d-1);
+        }
+    }
+    
+    
+    if(a>c && d>=0)
+    {
+        if(a-b*d<=c)
+        {  
+            fun(a-b,b,c,d-1);
+            fun(a+b,b,c,d-1);
+        }
+    }
+    
+    
+}
