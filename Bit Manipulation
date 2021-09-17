@@ -1,0 +1,30 @@
+/*Geek's file currently has zero lines of codes. Each morning geek can add some arbitrary lines of code(possibly zero too). 
+Each night, each line of the code splits into two lines. Geek wants N lines of code at some moment. Find the minimum lines of code geek adds.*/
+
+#include <iostream>
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    while(t>0)
+    {
+    int n;
+    cin>>n;
+   int count =0;
+	while(n>0)
+	{
+	    if(n%2==0)
+	    {   n=n/2;
+	    }
+	    else
+	    {
+	        count++;
+	        n=n/2;
+	    }
+	   
+	}
+	 cout<<count<<endl;
+	 t--;
+	}
+	return 0;
+}
