@@ -1,0 +1,68 @@
+/* C++ implementation of max min in mimimum comparison */
+#include <bits/stdc++.h> 
+#include<vector>
+using namespace std; 
+
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++)
+        {
+            cin>>a[i];
+        }
+       
+    vector<int>max;
+    vector<int>min;
+    
+   
+       for(int i=0;i<=n-2;i=i+2)
+        {
+            if(a[i]>a[i+1])
+        {
+            max.push_back(a[i]);
+            min.push_back(a[i+1]);
+        }
+        else
+        {
+          max.push_back(a[i+1]);
+            min.push_back(a[i]);  
+        }
+        
+        }
+    if(n%2!=0)
+    {
+        if(a[n-1]>a[n-2])
+        {
+            max.push_back(a[n-1]);
+            min.push_back(a[n-2]);
+        }
+        else
+        {
+         max.push_back(a[n-2]);
+            min.push_back(a[n-1]);   
+        }
+    }
+    int minimum= min[0];
+    for(int i=0;i<min.size();i++)
+    {
+        if(minimum>min[i])
+        {
+            minimum=min[i];
+        }
+    }
+    cout<<"minimum ";
+    cout<<minimum<<endl;
+    int maximum= max[0];
+    for(int i=0;i<max.size();i++)
+    {
+        if(maximum<max[i])
+        {
+           maximum=max[i];
+        }
+    }
+    cout<<"maximum ";
+    cout<<maximum<<endl;
+return 0;
+}
